@@ -11,9 +11,8 @@ jobs:
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:
-          start: |
-            npm run build &&
-            npx serve -s -l 3000 build/
+          start: npm run build && serve -s -l 3000 build/
+          wait-on: http://localhost:3000
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v1
