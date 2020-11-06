@@ -12,7 +12,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: |
-            npm run build
+            npm run build &&
             npx serve -s -l 3000 build/
 
       - name: Upload screenshots
